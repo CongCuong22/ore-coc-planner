@@ -35,52 +35,88 @@ body {
 
 /* Custom range slider styles */
 input[type="range"] {
-  -webkit-appearance: none;
+  --range-thumb-size: 18px;
+  --range-track-height: 6px;
+  appearance: none;
+  width: 100%;
+  height: var(--range-track-height);
   background: transparent;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
-input[type="range"]::-webkit-slider-track {
-  background: #e2e8f0;
-  height: 8px;
-  border-radius: 4px;
+/* Track */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: var(--range-track-height);
+  /* background: #fbbf24; */
+  border-radius: 9999px;
 }
-
-.dark input[type="range"]::-webkit-slider-track {
-  background: #475569;
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  /* background: #f59e42; */
 }
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background: #d97706;
-  cursor: pointer;
-  border: 2px solid #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-input[type="range"]::-webkit-slider-thumb:hover {
-  background: #b45309;
-  transform: scale(1.1);
-}
-
 input[type="range"]::-moz-range-track {
-  background: #e2e8f0;
-  height: 8px;
-  border-radius: 4px;
-  border: none;
+  height: var(--range-track-height);
+  background: #fbbf24;
+  border-radius: 9999px;
+}
+input[type="range"]:focus::-moz-range-track {
+  background: #f59e42;
+}
+input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-upper {
+  background: #fbbf24;
+  border-radius: 9999px;
 }
 
-input[type="range"]::-moz-range-thumb {
-  height: 20px;
-  width: 20px;
+/* Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: var(--range-thumb-size);
+  height: var(--range-thumb-size);
+  background: #f59e42;
   border-radius: 50%;
-  background: #d97706;
-  cursor: pointer;
-  border: 2px solid #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+  margin-top: calc((var(--range-track-height) - var(--range-thumb-size)) / 2);
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+  background: #fbbf24;
+}
+input[type="range"]::-moz-range-thumb {
+  width: var(--range-thumb-size);
+  height: var(--range-thumb-size);
+  background: #f59e42;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+input[type="range"]:focus::-moz-range-thumb {
+  background: #fbbf24;
+}
+input[type="range"]::-ms-thumb {
+  width: var(--range-thumb-size);
+  height: var(--range-thumb-size);
+  background: #f59e42;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+input[type="range"]:focus::-ms-thumb {
+  background: #fbbf24;
+}
+
+/* Remove outline for Firefox */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/* Hide the outline for IE */
+input[type="range"]::-ms-tooltip {
+  display: none;
 }
 
 /* Custom checkbox styles */

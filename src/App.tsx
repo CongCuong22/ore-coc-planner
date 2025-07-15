@@ -1,8 +1,25 @@
 import { useState } from 'react'
 import './App.css'
+import PlayerForm from './components/PlayerForm'
+import type { PlayerSettings } from './types'
 
 function App() {
   const [isDark, setIsDark] = useState(false)
+  const [playerSettings, setPlayerSettings] = useState<PlayerSettings>({
+    league: 'Legend',
+    attackTownHall: 16,
+    clanWarAttackPerWeek: 7,
+    clanWarRatio: 1,
+    oresBuyUsingRaidMedals: { shiny: 0, glowy: 0, starry: 0 },
+    oresBuyUsingGem: { shiny: 0, glowy: 0, starry: 0 },
+    oreTraiderFree: false,
+    playerTag: '',
+    equimentJson: ''
+  })
+
+  const handleSettingsChange = (settings: PlayerSettings) => {
+    setPlayerSettings(settings)
+  }
 
   return (
     
@@ -59,6 +76,11 @@ function App() {
               </div>
               <div className="p-6">
                 {/* Player Form */}
+                <PlayerForm 
+                  settings={playerSettings}
+                  onSettingsChange={handleSettingsChange}
+                  isDark = {isDark}
+                />
               </div>
             </div>
 

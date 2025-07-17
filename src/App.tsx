@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import PlayerForm from './components/PlayerForm'
+import OreCalculator from './components/OreCalculator'
 import type { PlayerSettings } from './types'
 
 function App() {
@@ -99,6 +100,10 @@ function App() {
               </div>
               <div className="p-6">
                 {/* Ore Calculator */}
+                <OreCalculator
+                  settings={playerSettings}
+                  isDark = {isDark}
+                />
               </div>
             </div>
           </div>

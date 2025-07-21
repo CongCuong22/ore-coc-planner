@@ -24,6 +24,7 @@ export type EquipmentRarity = 'Common' | 'Epic';
 export interface Equipment {
     id: string; 
     name: string; 
+    hero: string;
     rarity: EquipmentRarity; 
     iconUrl?: string;
     currentLevel: number;

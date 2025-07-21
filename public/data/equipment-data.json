@@ -1,0 +1,281 @@
+[
+  {
+    "id": "barbarian_puppet",
+    "name": "Barbarian Puppet",
+    "hero": "Barbarian King",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/barbarian_puppet.png"
+  },
+  {
+    "id": "rage_vial",
+    "name": "Rage Vial",
+    "hero": "Barbarian King",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/rage_vial.png"
+  },
+  {
+    "id": "earthquake_boots",
+    "name": "Earthquake Boots",
+    "hero": "Barbarian King",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/earthquake_boots.png"
+  },
+  {
+    "id": "vampstache",
+    "name": "Vampstache",
+    "hero": "Barbarian King",
+    "rarity": "common",
+    "type": "Passive",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/vampstache.png"
+  },
+  {
+    "id": "giant_gauntlet",
+    "name": "Giant Gauntlet",
+    "hero": "Barbarian King",
+    "rarity": "epic",
+    "type": "Active",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/giant_gauntlet.png"
+  },
+  {
+    "id": "spiky_ball",
+    "name": "Spiky Ball",
+    "hero": "Barbarian King",
+    "rarity": "epic",
+    "type": "Active",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/spiky_ball.png"
+  },
+  {
+    "id": "snake_bracelet",
+    "name": "Snake Bracelet",
+    "hero": "Barbarian King",
+    "rarity": "epic",
+    "type": "Passive",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/snake_bracelet.png"
+  },
+  {
+    "id": "archer_puppet",
+    "name": "Archer Puppet",
+    "hero": "Archer Queen",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/archer_puppet.png"
+  },
+  {
+    "id": "invisibility_vial",
+    "name": "Invisibility Vial",
+    "hero": "Archer Queen",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/invisibility_vial.png"
+  },
+  {
+    "id": "giant_arrow",
+    "name": "Giant Arrow",
+    "hero": "Archer Queen",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/giant_arrow.png"
+  },
+  {
+    "id": "healer_puppet",
+    "name": "Healer Puppet",
+    "hero": "Archer Queen",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/healer_puppet.png"
+  },
+  {
+    "id": "frozen_arrow",
+    "name": "Frozen Arrow",
+    "hero": "Archer Queen",
+    "rarity": "epic",
+    "type": "Passive",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/frozen_arrow.png"
+  },
+  {
+    "id": "magic_mirror",
+    "name": "Magic Mirror",
+    "hero": "Archer Queen",
+    "rarity": "epic",
+    "type": "Active",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/magic_mirror.png"
+  },
+  {
+    "id": "action_figure",
+    "name": "Action Figure",
+    "hero": "Archer Queen",
+    "rarity": "epic",
+    "type": "Active",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/action_figure.png"
+  },
+  {
+    "id": "dark_orb",
+    "name": "Dark Orb",
+    "hero": "Minion Prince",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/dark_orb.png"
+  },
+  {
+    "id": "henchmen_puppet",
+    "name": "Henchmen Puppet",
+    "hero": "Minion Prince",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/henchmen_puppet.png"
+  },
+  {
+    "id": "metal_pants",
+    "name": "Metal Pants",
+    "hero": "Minion Prince",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/metal_pants.png"
+  },
+  {
+    "id": "noble_iron",
+    "name": "Noble Iron",
+    "hero": "Minion Prince",
+    "rarity": "common",
+    "type": "Passive",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/noble_iron.png"
+  },
+  {
+    "id": "dark_crown",
+    "name": "Dark Crown",
+    "hero": "Minion Prince",
+    "rarity": "epic",
+    "type": "Passive",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/dark_crown.png"
+  },
+  {
+    "id": "eternal_tome",
+    "name": "Eternal Tome",
+    "hero": "Grand Warden",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/eternal_tome.png"
+  },
+  {
+    "id": "life_gem",
+    "name": "Life Gem",
+    "hero": "Grand Warden",
+    "rarity": "common",
+    "type": "Passive",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/life_gem.png"
+  },
+  {
+    "id": "rage_gem",
+    "name": "Rage Gem",
+    "hero": "Grand Warden",
+    "rarity": "common",
+    "type": "Passive",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/rage_gem.png"
+  },
+  {
+    "id": "healing_tome",
+    "name": "Healing Tome",
+    "hero": "Grand Warden",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/healing_tome.png"
+  },
+  {
+    "id": "fireball",
+    "name": "Fireball",
+    "hero": "Grand Warden",
+    "rarity": "epic",
+    "type": "Active",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/fireball.png"
+  },
+  {
+    "id": "lavaloon_puppet",
+    "name": "Lavaloon Puppet",
+    "hero": "Grand Warden",
+    "rarity": "epic",
+    "type": "Active",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/lavaloon_puppet.png"
+  },
+  {
+    "id": "royal_gem",
+    "name": "Royal Gem",
+    "hero": "Royal Champion",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/royal_gem.png"
+  },
+  {
+    "id": "seeking_shield",
+    "name": "Seeking Shield",
+    "hero": "Royal Champion",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/seeking_shield.png"
+  },
+  {
+    "id": "hog_rider_puppet",
+    "name": "Hog Rider Puppet",
+    "hero": "Royal Champion",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/hog_rider_puppet.png"
+  },
+  {
+    "id": "haste_vial",
+    "name": "Haste Vial",
+    "hero": "Royal Champion",
+    "rarity": "common",
+    "type": "Active",
+    "maxLevel": 18,
+    "iconUrl": "/equipments/haste_vial.png"
+  },
+  {
+    "id": "rocket_spear",
+    "name": "Rocket Spear",
+    "hero": "Royal Champion",
+    "rarity": "epic",
+    "type": "Active",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/rocket_spear.png"
+  },
+  {
+    "id": "electro_boots",
+    "name": "Electro Boots",
+    "hero": "Royal Champion",
+    "rarity": "epic",
+    "type": "Passive",
+    "maxLevel": 27,
+    "iconUrl": "/equipments/electro_boots.png"
+  }
+]

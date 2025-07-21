@@ -4,6 +4,7 @@ import type { PlayerSettings } from "../types";
 interface OreCalculatorProps {
   settings: PlayerSettings;
   isDark: boolean;
+  onWeeklyOreChange: (weeklyOre: {shiny: number; glowy: number; starry: number}) => void;
 }
 
 interface OreSource {
@@ -111,7 +112,7 @@ function calcOreWeek(settings: PlayerSettings){
   return { sources, total };
 }
 
-function OreCalculator({ settings, isDark }: OreCalculatorProps) {
+function OreCalculator({ settings, isDark, onWeeklyOreChange }: OreCalculatorProps) {
   const [mode, setMode] = useState<"week" | "month">("month");
   const [oreData, setOreData] = useState<OreData | null>(null);
 
@@ -130,7 +131,10 @@ function OreCalculator({ settings, isDark }: OreCalculatorProps) {
       month.total.starry += month.sources[k].starry;
     }
     setOreData({ week, month });
-  }, [settings]);
+    
+   
+    onWeeklyOreChange(week.total);
+  }, [settings, onWeeklyOreChange]);
 
   if (!oreData) return <div>Loading...</div>;
   const current = oreData[mode];

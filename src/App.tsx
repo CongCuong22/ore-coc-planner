@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import PlayerForm from './components/PlayerForm'
 import OreCalculator from './components/OreCalculator'
 import type { PlayerSettings } from './types'
+import EquipmentManager from './components/EquipmentManager'
 
 function App() {
   const [isDark, setIsDark] = useState(false)
@@ -18,8 +19,38 @@ function App() {
     equimentJson: ''
   })
 
+  // Equipment state
+  const [equipmentList, setEquipmentList] = useState([])
+
+  const [weeklyOre, setWeeklyOre] = useState({shiny: 0, glowy: 0, starry: 0})
+
+  useEffect(() => {
+    fetch('/data/equipment-data.json')
+      .then(res => res.json())
+      .then((data) => {
+        // Map interface Equipment
+        const mapped = data.map((eq: any) => ({
+          id: eq.id,
+          name: eq.name,
+          hero: eq.hero,
+          rarity: eq.rarity === 'epic' ? 'Epic' : 'Common',
+          iconUrl: eq.iconUrl,
+          currentLevel: 1,
+          targetLevel: eq.maxLevel,
+          oreCost: { shiny: 0, glowy: 0, starry: 0 },
+          isSelected: true,
+          isHidden: false
+        }))
+        setEquipmentList(mapped)
+      })
+  }, [])
+
   const handleSettingsChange = (settings: PlayerSettings) => {
     setPlayerSettings(settings)
+  }
+
+  const handleEquipmentChange = (newList: any) => {
+    setEquipmentList(newList)
   }
 
   return (
@@ -102,7 +133,8 @@ function App() {
                 {/* Ore Calculator */}
                 <OreCalculator
                   settings={playerSettings}
-                  isDark = {isDark}
+                  isDark={isDark}
+                  onWeeklyOreChange={setWeeklyOre}
                 />
               </div>
             </div>
@@ -122,7 +154,12 @@ function App() {
               </h2>
             </div>
             <div className="p-6">
-              {/* Equipment Manager */}
+              <EquipmentManager
+                equipment={equipmentList}
+                onEquipmentChange={handleEquipmentChange}
+                isDark={isDark}
+                weeklyOre={weeklyOre}
+              />
             </div>
           </div>
         </main>

@@ -6,7 +6,7 @@ import type { PlayerSettings } from './types'
 import EquipmentManager from './components/EquipmentManager'
 
 function App() {
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(false)
   const [playerSettings, setPlayerSettings] = useState<PlayerSettings>({
     league: 'Legend',
     attackTownHall: 16,
@@ -55,11 +55,19 @@ function App() {
 
   return (
     
-    <div className={`min-h-screen transition-colors duration-300 ${
-      isDark 
-        ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800' 
-        : 'bg-gradient-to-br from-blue-50 via-amber-50 to-orange-50'
-    }`}>
+    <div className={isDark ? 'dark bg-slate-900 min-h-screen' : 'bg-slate-50 min-h-screen'}>
+      <button
+        onClick={() => setIsDark(d => !d)}
+        className={`fixed top-4 right-4 z-50 p-2 rounded-full shadow-lg border transition-colors duration-200 focus:outline-none
+          ${isDark ? 'bg-slate-800 text-yellow-300 border-slate-700 hover:bg-slate-700' : 'bg-white text-amber-500 border-amber-200 hover:bg-amber-100'}`}
+        title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+      >
+        {isDark ? (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 5.66l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" /></svg>
+        )}
+      </button>
       {/* Background Image */}
       <div 
         className="fixed inset-0 opacity-5 bg-cover bg-center bg-no-repeat"

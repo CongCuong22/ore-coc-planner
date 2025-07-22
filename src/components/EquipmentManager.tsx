@@ -71,7 +71,15 @@ function EquipmentManager({ equipment, onEquipmentChange, isDark, weeklyOre }: E
       {/* Hero filter */}
       <div className="flex flex-wrap gap-3">
         {HEROES.map(hero => (
-          <label key={hero} className="flex items-center gap-1 cursor-pointer">
+          <label key={hero} className={`flex items-center gap-1 cursor-pointer px-3 py-1 rounded-md font-medium transition-colors border select-none
+            ${selectedHeroes.includes(hero)
+              ? isDark
+                ? 'bg-amber-600/80 text-white border-amber-500 shadow-sm hover:bg-amber-500'
+                : 'bg-amber-100 text-amber-800 border-amber-300 shadow-sm hover:bg-amber-200'
+              : isDark
+                ? 'bg-slate-700 text-slate-200 border-slate-600 hover:bg-slate-600'
+                : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'}
+          `}>
             <input
               type="checkbox"
               checked={selectedHeroes.includes(hero)}
@@ -82,6 +90,7 @@ function EquipmentManager({ equipment, onEquipmentChange, isDark, weeklyOre }: E
                     : val.filter(h => h !== hero)
                 )
               }}
+              className="accent-amber-500 w-4 h-4 focus:ring-amber-400"
             />
             <span>{hero}</span>
           </label>
@@ -89,10 +98,35 @@ function EquipmentManager({ equipment, onEquipmentChange, isDark, weeklyOre }: E
       </div>
 
       {/* Controls + badge */}
-      <div className="flex flex-wrap gap-4 items-center">
-        <button onClick={() => onEquipmentChange(equipment.map(eq => ({ ...eq, isSelected: true })))} className="btn">Select All</button>
-        <button onClick={() => onEquipmentChange(equipment.map(eq => ({ ...eq, isSelected: false })))} className="btn">Deselect All</button>
-        <button onClick={() => setShowHidden(v => !v)} className="btn">
+      <div className="flex flex-wrap gap-4 items-center mt-2">
+        <button
+          onClick={() => onEquipmentChange(equipment.map(eq => ({ ...eq, isSelected: true })))}
+          className={`px-4 py-2 rounded-lg font-semibold border transition-colors duration-150 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-400
+            ${isDark
+              ? 'bg-slate-700 text-amber-200 border-slate-600 hover:bg-amber-700 hover:text-white'
+              : 'bg-amber-100 text-amber-800 border-amber-300 hover:bg-amber-200'}
+          `}
+        >
+          Select All
+        </button>
+        <button
+          onClick={() => onEquipmentChange(equipment.map(eq => ({ ...eq, isSelected: false })))}
+          className={`px-4 py-2 rounded-lg font-semibold border transition-colors duration-150 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-400
+            ${isDark
+              ? 'bg-slate-700 text-slate-200 border-slate-600 hover:bg-slate-600'
+              : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'}
+          `}
+        >
+          Deselect All
+        </button>
+        <button
+          onClick={() => setShowHidden(v => !v)}
+          className={`px-4 py-2 rounded-lg font-semibold border transition-colors duration-150 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-400
+            ${isDark
+              ? 'bg-slate-700 text-green-200 border-slate-600 hover:bg-green-700 hover:text-white'
+              : 'bg-green-100 text-green-800 border-green-300 hover:bg-green-200'}
+          `}
+        >
           {showHidden ? 'Hide Hidden Equipment' : `Show Hidden Equipment (${equipment.filter(eq => eq.isHidden).length})`}
         </button>
         <span className="ml-2 px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-semibold">
@@ -231,7 +265,7 @@ function EquipmentManager({ equipment, onEquipmentChange, isDark, weeklyOre }: E
                                       ))
                                     }
                                   }}
-                                  className="w-14 p-1 text-center rounded border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-sm"
+                                  className={`w-14 p-1 text-center rounded border text-sm ${isDark ? 'bg-slate-700 border-slate-600 text-slate-100 placeholder-slate-400' : 'bg-slate-50 border-slate-300 text-slate-800 placeholder-slate-400'}`}
                                 />
                                 <span className="text-xs text-slate-500">/</span>
                                 {/* Input targetLevel */}
@@ -250,7 +284,7 @@ function EquipmentManager({ equipment, onEquipmentChange, isDark, weeklyOre }: E
                                       ))
                                     }
                                   }}
-                                  className="w-14 p-1 text-center rounded border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-sm"
+                                  className={`w-14 p-1 text-center rounded border text-sm ${isDark ? 'bg-slate-700 border-slate-600 text-slate-100 placeholder-slate-400' : 'bg-slate-50 border-slate-300 text-slate-800 placeholder-slate-400'}`}
                                 />
                                 <span className="text-xs text-slate-400">/{maxLevel}</span>
                               </div>

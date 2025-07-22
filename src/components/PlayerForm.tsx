@@ -97,7 +97,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                 onChange={e => updateSetting('attackTownHall', parseInt(e.target.value))}
                 className={sliderClasses}
                 style={{
-                  background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((settings.attackTownHall-8)/9)*100}%, #22292f ${((settings.attackTownHall-8)/9)*100}%, #22292f 100%)`
+                  background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${((settings.attackTownHall-8)/9)*100}%, ${isDark ? '#334155' : '#22292f'} ${((settings.attackTownHall-8)/9)*100}%, ${isDark ? '#334155' : '#22292f'} 100%)`
                 }}
               />
               <div className="flex justify-between mt-2 select-none min-h-[40px]">
@@ -137,7 +137,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                   onChange={e => updateSetting('clanWarAttackPerWeek', parseInt(e.target.value))}
                   className={sliderClasses}
                   style={{
-                    background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.clanWarAttackPerWeek/7)*100}%, #22292f ${(settings.clanWarAttackPerWeek/7)*100}%, #22292f 100%)`
+                    background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.clanWarAttackPerWeek/7)*100}%, ${isDark ? '#334155' : '#22292f'} ${(settings.clanWarAttackPerWeek/7)*100}%, ${isDark ? '#334155' : '#22292f'} 100%)`
                   }}
                 />
                 <div className="flex justify-between mt-2 select-none min-h-[40px]">
@@ -177,7 +177,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                   onChange={e => updateSetting('clanWarRatio', parseFloat(e.target.value))}
                   className={sliderClasses}
                   style={{
-                    background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${settings.clanWarRatio*100}%, #22292f ${settings.clanWarRatio*100}%, #22292f 100%)`
+                    background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${settings.clanWarRatio*100}%, ${isDark ? '#334155' : '#22292f'} ${settings.clanWarRatio*100}%, ${isDark ? '#334155' : '#22292f'} 100%)`
                   }}
                 />
                 <div className={`flex justify-between text-xs mt-1 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -200,7 +200,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         onChange={e => updateRaidMedal('shiny', parseInt(e.target.value))}
                         className={`${sliderClasses} w-24`}
                         style={{
-                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingRaidMedals.shiny / 1000) * 100}%, #22292f ${(settings.oresBuyUsingRaidMedals.shiny / 1000) * 100}%, #22292f 100%)`
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingRaidMedals.shiny / 1000) * 100}%, ${isDark ? '#334155' : '#22292f'} ${(settings.oresBuyUsingRaidMedals.shiny / 1000) * 100}%, ${isDark ? '#334155' : '#22292f'} 100%)`
                         }}
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.shiny}</span>
@@ -215,7 +215,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         onChange={e => updateRaidMedal('glowy', parseInt(e.target.value))}
                         className={`${sliderClasses} w-16`}
                          style={{
-                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingRaidMedals.glowy / 100) * 100}%, #22292f ${(settings.oresBuyUsingRaidMedals.glowy / 100) * 100}%, #22292f 100%)`
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingRaidMedals.glowy / 100) * 100}%, ${isDark ? '#334155' : '#22292f'} ${(settings.oresBuyUsingRaidMedals.glowy / 100) * 100}%, ${isDark ? '#334155' : '#22292f'} 100%)`
                         }}
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.glowy}</span>
@@ -230,7 +230,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         onChange={e => updateRaidMedal('starry', parseInt(e.target.value))}
                         className={`${sliderClasses} w-12`}
                         style={{
-                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingRaidMedals.starry / 10) * 100}%, #22292f ${(settings.oresBuyUsingRaidMedals.starry / 10) * 100}%, #22292f 100%)`
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingRaidMedals.starry / 10) * 100}%, ${isDark ? '#334155' : '#22292f'} ${(settings.oresBuyUsingRaidMedals.starry / 10) * 100}%, ${isDark ? '#334155' : '#22292f'} 100%)`
                         }}
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.starry}</span>
@@ -251,7 +251,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         onChange={e => updateGem('shiny', parseInt(e.target.value))}
                         className={`${sliderClasses} w-24`}
                         style={{
-                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingGem.shiny / 1500) * 100}%, #22292f ${(settings.oresBuyUsingGem.shiny / 1500) * 100}%, #22292f 100%)`
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingGem.shiny / 1500) * 100}%, ${isDark ? '#334155' : '#22292f'} ${(settings.oresBuyUsingGem.shiny / 1500) * 100}%, ${isDark ? '#334155' : '#22292f'} 100%)`
                         }}
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.shiny}</span>
@@ -266,7 +266,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         onChange={e => updateGem('glowy', parseInt(e.target.value))}
                         className={`${sliderClasses} w-24`}
                         style={{
-                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingGem.glowy / 120) * 100}%, #22292f ${(settings.oresBuyUsingGem.glowy / 120) * 100}%, #22292f 100%)`
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingGem.glowy / 120) * 100}%, ${isDark ? '#334155' : '#22292f'} ${(settings.oresBuyUsingGem.glowy / 120) * 100}%, ${isDark ? '#334155' : '#22292f'} 100%)`
                         }}
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.glowy}</span>
@@ -281,7 +281,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         onChange={e => updateGem('starry', parseInt(e.target.value))}
                         className={`${sliderClasses} w-24`}
                         style={{
-                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingGem.starry / 15) * 100}%, #22292f ${(settings.oresBuyUsingGem.starry / 15) * 100}%, #22292f 100%)`
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingGem.starry / 15) * 100}%, ${isDark ? '#334155' : '#22292f'} ${(settings.oresBuyUsingGem.starry / 15) * 100}%, ${isDark ? '#334155' : '#22292f'} 100%)`
                         }}
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.starry}</span>

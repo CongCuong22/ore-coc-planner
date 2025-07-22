@@ -113,7 +113,7 @@ function calcOreWeek(settings: PlayerSettings){
 }
 
 function OreCalculator({ settings, isDark, onWeeklyOreChange }: OreCalculatorProps) {
-  const [mode, setMode] = useState<"week" | "month">("month");
+  const [mode, setMode] = useState<"week" | "month">("week");
   const [oreData, setOreData] = useState<OreData | null>(null);
 
   useEffect(() => {

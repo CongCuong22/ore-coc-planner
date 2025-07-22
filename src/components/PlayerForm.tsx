@@ -107,12 +107,11 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                   return (
                     <span
                       key={th}
-                      className={
-                        "mx-1 font-bold transition-all duration-150 inline-block align-bottom" +
-                        (isActive
-                          ? " text-white text-2xl drop-shadow-[0_2px_0_rgba(0,0,0,0.7)]"
-                          : " text-gray-400 text-xl")
-                      }
+                      className={`mx-1 font-bold transition-all duration-150 inline-block align-bottom ${
+                        isActive
+                          ? `text-2xl ${isDark ? 'text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.7)]' : 'text-amber-600'}`
+                          : `text-xl ${isDark ? 'text-slate-500' : 'text-slate-400'}`
+                      }`}
                       style={{
                         fontFamily: "'Bangers', 'Roboto', sans-serif",
                         letterSpacing: "1px",
@@ -147,12 +146,11 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                     return (
                       <span
                         key={i}
-                        className={
-                          "mx-1 font-bold transition-all duration-150 inline-block align-bottom" +
-                          (isActive
-                            ? " text-white text-2xl drop-shadow-[0_2px_0_rgba(0,0,0,0.7)]"
-                            : " text-gray-400 text-xl")
-                        }
+                        className={`mx-1 font-bold transition-all duration-150 inline-block align-bottom ${
+                          isActive
+                            ? `text-2xl ${isDark ? 'text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.7)]' : 'text-amber-600'}`
+                            : `text-xl ${isDark ? 'text-slate-500' : 'text-slate-400'}`
+                        }`}
                         style={{
                           fontFamily: "'Bangers', 'Roboto', sans-serif",
                           letterSpacing: "1px",
@@ -182,7 +180,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                     background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${settings.clanWarRatio*100}%, #22292f ${settings.clanWarRatio*100}%, #22292f 100%)`
                   }}
                 />
-                <div className="flex justify-between text-xs mt-1">
+                <div className={`flex justify-between text-xs mt-1 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                     <span>0%</span>
                     <span>100%</span>
                 </div>
@@ -192,7 +190,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
             <div>
                 <label className={labelClasses}>Ores buy using raid medals</label>
                 <div className="flex items-center gap-4">
-                    <span title="Shiny Ore">💎</span>
+                    <img src="/images/shiny.png" alt="Shiny Ore" className="w-6 h-6" title="Shiny Ore" />
                     <input
                         type="range"
                         min={0}
@@ -200,11 +198,14 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         step={500}
                         value={settings.oresBuyUsingRaidMedals.shiny}
                         onChange={e => updateRaidMedal('shiny', parseInt(e.target.value))}
-                        className="w-24"
+                        className={`${sliderClasses} w-24`}
+                        style={{
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingRaidMedals.shiny / 1000) * 100}%, #22292f ${(settings.oresBuyUsingRaidMedals.shiny / 1000) * 100}%, #22292f 100%)`
+                        }}
                     />
-                    <span className="inline-block text-right" style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.shiny}</span>
+                    <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.shiny}</span>
 
-                    <span title="Glowy Ore"></span>
+                    <img src="/images/glowy.png" alt="Glowy Ore" className="w-6 h-6" title="Glowy Ore" />
                     <input
                         type="range"
                         min={0}
@@ -212,11 +213,14 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         step={50}
                         value={settings.oresBuyUsingRaidMedals.glowy}
                         onChange={e => updateRaidMedal('glowy', parseInt(e.target.value))}
-                        className="w-16"
+                        className={`${sliderClasses} w-16`}
+                         style={{
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingRaidMedals.glowy / 100) * 100}%, #22292f ${(settings.oresBuyUsingRaidMedals.glowy / 100) * 100}%, #22292f 100%)`
+                        }}
                     />
-                    <span className="inline-block text-right" style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.glowy}</span>
+                    <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.glowy}</span>
 
-                    <span title="Starry Ore">🌟</span>
+                    <img src="/images/starry.png" alt="Starry Ore" className="w-6 h-6" title="Starry Ore" />
                     <input
                         type="range"
                         min={0}
@@ -224,9 +228,12 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         step={5}
                         value={settings.oresBuyUsingRaidMedals.starry}
                         onChange={e => updateRaidMedal('starry', parseInt(e.target.value))}
-                        className="w-12"
+                        className={`${sliderClasses} w-12`}
+                        style={{
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingRaidMedals.starry / 10) * 100}%, #22292f ${(settings.oresBuyUsingRaidMedals.starry / 10) * 100}%, #22292f 100%)`
+                        }}
                     />
-                    <span className="inline-block text-right" style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.starry}</span>
+                    <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.starry}</span>
                 </div>
             </div>
 
@@ -234,7 +241,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
             <div>
                 <label className={labelClasses}>Ores buy using gems</label>
                 <div className="flex items-center gap-4">
-                    <span title="Shiny Ore">💎</span>
+                    <img src="/images/shiny.png" alt="Shiny Ore" className="w-6 h-6" title="Shiny Ore" />
                     <input
                         type="range"
                         min={0}
@@ -242,11 +249,14 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         step={300}
                         value={settings.oresBuyUsingGem.shiny}
                         onChange={e => updateGem('shiny', parseInt(e.target.value))}
-                        className="w-24"
+                        className={`${sliderClasses} w-24`}
+                        style={{
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingGem.shiny / 1500) * 100}%, #22292f ${(settings.oresBuyUsingGem.shiny / 1500) * 100}%, #22292f 100%)`
+                        }}
                     />
-                    <span className="inline-block text-right" style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.shiny}</span>
+                    <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.shiny}</span>
 
-                    <span title="Glowy Ore">✨</span>
+                    <img src="/images/glowy.png" alt="Glowy Ore" className="w-6 h-6" title="Glowy Ore" />
                     <input
                         type="range"
                         min={0}
@@ -254,11 +264,14 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         step={60}
                         value={settings.oresBuyUsingGem.glowy}
                         onChange={e => updateGem('glowy', parseInt(e.target.value))}
-                        className="w-24"
+                        className={`${sliderClasses} w-24`}
+                        style={{
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingGem.glowy / 120) * 100}%, #22292f ${(settings.oresBuyUsingGem.glowy / 120) * 100}%, #22292f 100%)`
+                        }}
                     />
-                    <span className="inline-block text-right" style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.glowy}</span>
+                    <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.glowy}</span>
 
-                    <span title="Starry Ore">🌟</span>
+                    <img src="/images/starry.png" alt="Starry Ore" className="w-6 h-6" title="Starry Ore" />
                     <input
                         type="range"
                         min={0}
@@ -266,9 +279,12 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                         step={15}
                         value={settings.oresBuyUsingGem.starry}
                         onChange={e => updateGem('starry', parseInt(e.target.value))}
-                        className="w-24"
+                        className={`${sliderClasses} w-24`}
+                        style={{
+                            background: `linear-gradient(to right, #fbbf24 0%, #fbbf24 ${(settings.oresBuyUsingGem.starry / 15) * 100}%, #22292f ${(settings.oresBuyUsingGem.starry / 15) * 100}%, #22292f 100%)`
+                        }}
                     />
-                    <span className="inline-block text-right" style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.starry}</span>
+                    <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.starry}</span>
                 </div>
             </div>
                 

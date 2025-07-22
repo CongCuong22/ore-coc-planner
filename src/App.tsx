@@ -6,7 +6,7 @@ import type { PlayerSettings } from './types'
 import EquipmentManager from './components/EquipmentManager'
 
 function App() {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(true)
   const [playerSettings, setPlayerSettings] = useState<PlayerSettings>({
     league: 'Legend',
     attackTownHall: 16,

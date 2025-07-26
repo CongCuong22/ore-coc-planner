@@ -6,7 +6,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/barbarian_puppet.png"
+    "iconUrl": "equipments/barbarian_puppet.png"
   },
   {
     "id": "rage_vial",
@@ -15,7 +15,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/rage_vial.png"
+    "iconUrl": "equipments/rage_vial.png"
   },
   {
     "id": "earthquake_boots",
@@ -24,7 +24,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/earthquake_boots.png"
+    "iconUrl": "equipments/earthquake_boots.png"
   },
   {
     "id": "vampstache",
@@ -33,7 +33,7 @@
     "rarity": "common",
     "type": "Passive",
     "maxLevel": 18,
-    "iconUrl": "/equipments/vampstache.png"
+    "iconUrl": "equipments/vampstache.png"
   },
   {
     "id": "giant_gauntlet",
@@ -42,7 +42,7 @@
     "rarity": "epic",
     "type": "Active",
     "maxLevel": 27,
-    "iconUrl": "/equipments/giant_gauntlet.png"
+    "iconUrl": "equipments/giant_gauntlet.png"
   },
   {
     "id": "spiky_ball",
@@ -51,7 +51,7 @@
     "rarity": "epic",
     "type": "Active",
     "maxLevel": 27,
-    "iconUrl": "/equipments/spiky_ball.png"
+    "iconUrl": "equipments/spiky_ball.png"
   },
   {
     "id": "snake_bracelet",
@@ -60,7 +60,7 @@
     "rarity": "epic",
     "type": "Passive",
     "maxLevel": 27,
-    "iconUrl": "/equipments/snake_bracelet.png"
+    "iconUrl": "equipments/snake_bracelet.png"
   },
   {
     "id": "archer_puppet",
@@ -69,7 +69,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/archer_puppet.png"
+    "iconUrl": "equipments/archer_puppet.png"
   },
   {
     "id": "invisibility_vial",
@@ -78,7 +78,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/invisibility_vial.png"
+    "iconUrl": "equipments/invisibility_vial.png"
   },
   {
     "id": "giant_arrow",
@@ -87,7 +87,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/giant_arrow.png"
+    "iconUrl": "equipments/giant_arrow.png"
   },
   {
     "id": "healer_puppet",
@@ -96,7 +96,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/healer_puppet.png"
+    "iconUrl": "equipments/healer_puppet.png"
   },
   {
     "id": "frozen_arrow",
@@ -105,7 +105,7 @@
     "rarity": "epic",
     "type": "Passive",
     "maxLevel": 27,
-    "iconUrl": "/equipments/frozen_arrow.png"
+    "iconUrl": "equipments/frozen_arrow.png"
   },
   {
     "id": "magic_mirror",
@@ -114,7 +114,7 @@
     "rarity": "epic",
     "type": "Active",
     "maxLevel": 27,
-    "iconUrl": "/equipments/magic_mirror.png"
+    "iconUrl": "equipments/magic_mirror.png"
   },
   {
     "id": "action_figure",
@@ -123,7 +123,7 @@
     "rarity": "epic",
     "type": "Active",
     "maxLevel": 27,
-    "iconUrl": "/equipments/action_figure.png"
+    "iconUrl": "equipments/action_figure.png"
   },
   {
     "id": "dark_orb",
@@ -132,7 +132,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/dark_orb.png"
+    "iconUrl": "equipments/dark_orb.png"
   },
   {
     "id": "henchmen_puppet",
@@ -141,7 +141,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/henchmen_puppet.png"
+    "iconUrl": "equipments/henchmen_puppet.png"
   },
   {
     "id": "metal_pants",
@@ -150,7 +150,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/metal_pants.png"
+    "iconUrl": "equipments/metal_pants.png"
   },
   {
     "id": "noble_iron",
@@ -159,7 +159,7 @@
     "rarity": "common",
     "type": "Passive",
     "maxLevel": 18,
-    "iconUrl": "/equipments/noble_iron.png"
+    "iconUrl": "equipments/noble_iron.png"
   },
   {
     "id": "dark_crown",
@@ -168,7 +168,7 @@
     "rarity": "epic",
     "type": "Passive",
     "maxLevel": 27,
-    "iconUrl": "/equipments/dark_crown.png"
+    "iconUrl": "equipments/dark_crown.png"
   },
   {
     "id": "eternal_tome",
@@ -177,7 +177,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/eternal_tome.png"
+    "iconUrl": "equipments/eternal_tome.png"
   },
   {
     "id": "life_gem",
@@ -186,7 +186,7 @@
     "rarity": "common",
     "type": "Passive",
     "maxLevel": 18,
-    "iconUrl": "/equipments/life_gem.png"
+    "iconUrl": "equipments/life_gem.png"
   },
   {
     "id": "rage_gem",
@@ -195,7 +195,7 @@
     "rarity": "common",
     "type": "Passive",
     "maxLevel": 18,
-    "iconUrl": "/equipments/rage_gem.png"
+    "iconUrl": "equipments/rage_gem.png"
   },
   {
     "id": "healing_tome",
@@ -204,7 +204,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/healing_tome.png"
+    "iconUrl": "equipments/healing_tome.png"
   },
   {
     "id": "fireball",
@@ -213,7 +213,7 @@
     "rarity": "epic",
     "type": "Active",
     "maxLevel": 27,
-    "iconUrl": "/equipments/fireball.png"
+    "iconUrl": "equipments/fireball.png"
   },
   {
     "id": "lavaloon_puppet",
@@ -222,7 +222,7 @@
     "rarity": "epic",
     "type": "Active",
     "maxLevel": 27,
-    "iconUrl": "/equipments/lavaloon_puppet.png"
+    "iconUrl": "equipments/lavaloon_puppet.png"
   },
   {
     "id": "royal_gem",
@@ -231,7 +231,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/royal_gem.png"
+    "iconUrl": "equipments/royal_gem.png"
   },
   {
     "id": "seeking_shield",
@@ -240,7 +240,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/seeking_shield.png"
+    "iconUrl": "equipments/seeking_shield.png"
   },
   {
     "id": "hog_rider_puppet",
@@ -249,7 +249,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/hog_rider_puppet.png"
+    "iconUrl": "equipments/hog_rider_puppet.png"
   },
   {
     "id": "haste_vial",
@@ -258,7 +258,7 @@
     "rarity": "common",
     "type": "Active",
     "maxLevel": 18,
-    "iconUrl": "/equipments/haste_vial.png"
+    "iconUrl": "equipments/haste_vial.png"
   },
   {
     "id": "rocket_spear",
@@ -267,7 +267,7 @@
     "rarity": "epic",
     "type": "Active",
     "maxLevel": 27,
-    "iconUrl": "/equipments/rocket_spear.png"
+    "iconUrl": "equipments/rocket_spear.png"
   },
   {
     "id": "electro_boots",
@@ -276,6 +276,6 @@
     "rarity": "epic",
     "type": "Passive",
     "maxLevel": 27,
-    "iconUrl": "/equipments/electro_boots.png"
+    "iconUrl": "equipments/electro_boots.png"
   }
 ]

@@ -26,7 +26,7 @@ function EquipmentManager({ equipment, onEquipmentChange, isDark, weeklyOre }: E
   const [collapsedHeroes, setCollapsedHeroes] = useState<string[]>([])
 
   useEffect(() => {
-    fetch('/data/upgrade-cost.json')
+    fetch('data/upgrade-cost.json')
       .then(res => res.json())
       .then(setUpgradeCosts)
   }, [])
@@ -188,9 +188,9 @@ function EquipmentManager({ equipment, onEquipmentChange, isDark, weeklyOre }: E
                     }}>
                       <span className="inline-block mr-2 align-middle">{isCollapsed ? '►' : '▼'}</span>{hero}
                       <span className="ml-4 text-base font-normal">
-                        {totalShiny > 0 && <span className="text-amber-500 font-semibold mr-2"><img src="/images/shiny.png" alt="shiny" className="w-4 h-4 inline-block" /> {totalShiny}</span>}
-                        {totalGlowy > 0 && <span className="text-blue-500 font-semibold mr-2"><img src="/images/glowy.png" alt="glowy" className="w-4 h-4 inline-block" /> {totalGlowy}</span>}
-                        {totalStarry > 0 && <span className="text-purple-500 font-semibold mr-2"><img src="/images/starry.png" alt="starry" className="w-4 h-4 inline-block" /> {totalStarry}</span>}
+                        {totalShiny > 0 && <span className="text-amber-500 font-semibold mr-2"><img src="images/shiny.png" alt="shiny" className="w-4 h-4 inline-block" /> {totalShiny}</span>}
+                        {totalGlowy > 0 && <span className="text-blue-500 font-semibold mr-2"><img src="images/glowy.png" alt="glowy" className="w-4 h-4 inline-block" /> {totalGlowy}</span>}
+                        {totalStarry > 0 && <span className="text-purple-500 font-semibold mr-2"><img src="images/starry.png" alt="starry" className="w-4 h-4 inline-block" /> {totalStarry}</span>}
                         <span className="text-green-700 dark:text-green-300 ml-2">Estimate: {heroEstimate}</span>
                       </span>
                     </td>
@@ -308,9 +308,9 @@ function EquipmentManager({ equipment, onEquipmentChange, isDark, weeklyOre }: E
                         </td>
                         <td className="text-center align-middle py-3">
                           <div className="flex gap-2 items-center flex-wrap justify-center">
-                            {cost.shiny > 0 && <span className="flex items-center gap-1 text-amber-500"><img src="/images/shiny.png" alt="shiny" className="w-4 h-4" />{cost.shiny}</span>}
-                            {cost.glowy > 0 && <span className="flex items-center gap-1 text-blue-500"><img src="/images/glowy.png" alt="glowy" className="w-4 h-4" />{cost.glowy}</span>}
-                            {cost.starry > 0 && <span className="flex items-center gap-1 text-purple-500"><img src="/images/starry.png" alt="starry" className="w-4 h-4" />{cost.starry}</span>}
+                            {cost.shiny > 0 && <span className="flex items-center gap-1 text-amber-500"><img src="images/shiny.png" alt="shiny" className="w-4 h-4" />{cost.shiny}</span>}
+                            {cost.glowy > 0 && <span className="flex items-center gap-1 text-blue-500"><img src="images/glowy.png" alt="glowy" className="w-4 h-4" />{cost.glowy}</span>}
+                            {cost.starry > 0 && <span className="flex items-center gap-1 text-purple-500"><img src="images/starry.png" alt="starry" className="w-4 h-4" />{cost.starry}</span>}
                             {(cost.shiny === 0 && cost.glowy === 0 && cost.starry === 0) && <span className="text-slate-400 italic">-</span>}
                           </div>
                         </td>

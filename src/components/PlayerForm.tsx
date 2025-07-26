@@ -190,7 +190,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
             <div>
                 <label className={labelClasses}>Ores buy using raid medals</label>
                 <div className="flex items-center gap-4">
-                    <img src="/images/shiny.png" alt="Shiny Ore" className="w-6 h-6" title="Shiny Ore" />
+                    <img src="images/shiny.png" alt="Shiny Ore" className="w-6 h-6" title="Shiny Ore" />
                     <input
                         type="range"
                         min={0}
@@ -205,7 +205,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.shiny}</span>
 
-                    <img src="/images/glowy.png" alt="Glowy Ore" className="w-6 h-6" title="Glowy Ore" />
+                    <img src="images/glowy.png" alt="Glowy Ore" className="w-6 h-6" title="Glowy Ore" />
                     <input
                         type="range"
                         min={0}
@@ -220,7 +220,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingRaidMedals.glowy}</span>
 
-                    <img src="/images/starry.png" alt="Starry Ore" className="w-6 h-6" title="Starry Ore" />
+                    <img src="images/starry.png" alt="Starry Ore" className="w-6 h-6" title="Starry Ore" />
                     <input
                         type="range"
                         min={0}
@@ -241,7 +241,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
             <div>
                 <label className={labelClasses}>Ores buy using gems</label>
                 <div className="flex items-center gap-4">
-                    <img src="/images/shiny.png" alt="Shiny Ore" className="w-6 h-6" title="Shiny Ore" />
+                    <img src="images/shiny.png" alt="Shiny Ore" className="w-6 h-6" title="Shiny Ore" />
                     <input
                         type="range"
                         min={0}
@@ -256,7 +256,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.shiny}</span>
 
-                    <img src="/images/glowy.png" alt="Glowy Ore" className="w-6 h-6" title="Glowy Ore" />
+                    <img src="images/glowy.png" alt="Glowy Ore" className="w-6 h-6" title="Glowy Ore" />
                     <input
                         type="range"
                         min={0}
@@ -271,7 +271,7 @@ function PlayerForm({settings, onSettingsChange, isDark} : PlayerFormProps) {
                     />
                     <span className={`inline-block text-right font-semibold ${isDark ? 'text-slate-100' : 'text-slate-800'}`} style={{minWidth: "40px"}}>{settings.oresBuyUsingGem.glowy}</span>
 
-                    <img src="/images/starry.png" alt="Starry Ore" className="w-6 h-6" title="Starry Ore" />
+                    <img src="images/starry.png" alt="Starry Ore" className="w-6 h-6" title="Starry Ore" />
                     <input
                         type="range"
                         min={0}

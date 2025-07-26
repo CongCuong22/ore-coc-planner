@@ -25,7 +25,7 @@ function App() {
   const [weeklyOre, setWeeklyOre] = useState({shiny: 0, glowy: 0, starry: 0})
 
   useEffect(() => {
-    fetch('/data/equipment-data.json')
+    fetch('data/equipment-data.json')
       .then(res => res.json())
       .then((data) => {
         // Map interface Equipment
@@ -71,7 +71,7 @@ function App() {
       {/* Background Image */}
       <div 
         className="fixed inset-0 opacity-5 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/background.png)' }}
+        style={{ backgroundImage: 'url(images/background.png)' }}
       />
       
       <div className="relative z-10">

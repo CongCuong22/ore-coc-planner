@@ -24,11 +24,11 @@ interface OreData {
 }
 
 const ORE_SOURCES = [
-  { key: "Daily", label: "Daily", icon: "/images/daily.png", color: "bg-amber-100 text-amber-700 border-amber-300", dark: "bg-amber-500/20 text-amber-100 border-amber-500/30" },
-  { key: "War", label: "War", icon: "/images/war.png", color: "bg-blue-100 text-blue-700 border-blue-300", dark: "bg-blue-500/20 text-blue-100 border-blue-500/30" },
-  { key: "Trader", label: "Trader Free", icon: "/images/trader.png", color: "bg-green-100 text-green-700 border-green-300", dark: "bg-green-500/20 text-green-100 border-green-500/30" },
-  { key: "Raid Medal", label: "Raid Medal", icon: "/images/raid.png", color: "bg-cyan-100 text-cyan-700 border-cyan-300", dark: "bg-cyan-500/20 text-cyan-100 border-cyan-500/30" },
-  { key: "Gem", label: "Gem", icon: "/images/gem.png", color: "bg-pink-100 text-pink-700 border-pink-300", dark: "bg-pink-500/20 text-pink-100 border-pink-500/30" },
+  { key: "Daily", label: "Daily", icon: "images/daily.png", color: "bg-amber-100 text-amber-700 border-amber-300", dark: "bg-amber-500/20 text-amber-100 border-amber-500/30" },
+  { key: "War", label: "War", icon: "images/war.png", color: "bg-blue-100 text-blue-700 border-blue-300", dark: "bg-blue-500/20 text-blue-100 border-blue-500/30" },
+  { key: "Trader", label: "Trader Free", icon: "images/trader.png", color: "bg-green-100 text-green-700 border-green-300", dark: "bg-green-500/20 text-green-100 border-green-500/30" },
+  { key: "Raid Medal", label: "Raid Medal", icon: "images/raid.png", color: "bg-cyan-100 text-cyan-700 border-cyan-300", dark: "bg-cyan-500/20 text-cyan-100 border-cyan-500/30" },
+  { key: "Gem", label: "Gem", icon: "images/gem.png", color: "bg-pink-100 text-pink-700 border-pink-300", dark: "bg-pink-500/20 text-pink-100 border-pink-500/30" },
 ];
 
 const LEAGUE_DAILY_BONUS: Record<string, { shiny: number; glowy: number }> = {
@@ -162,9 +162,9 @@ function OreCalculator({ settings, isDark, onWeeklyOreChange }: OreCalculatorPro
       {/* Total ore */}
       <div className="flex flex-col items-center gap-2 mb-4">
         <div className="text-2xl font-bold flex gap-4">
-          <span className="flex items-center gap-1 text-amber-500"><img src="/images/shiny.png" alt="shiny" className="w-6 h-6 inline-block" /> {formatNumber(current.total.shiny)}</span>
-          <span className="flex items-center gap-1 text-blue-500"><img src="/images/glowy.png" alt="glowy" className="w-6 h-6 inline-block" /> {formatNumber(current.total.glowy)}</span>
-          <span className="flex items-center gap-1 text-purple-500"><img src="/images/starry.png" alt="starry" className="w-6 h-6 inline-block" /> {formatNumber(current.total.starry)}</span>
+          <span className="flex items-center gap-1 text-amber-500"><img src="images/shiny.png" alt="shiny" className="w-6 h-6 inline-block" /> {formatNumber(current.total.shiny)}</span>
+          <span className="flex items-center gap-1 text-blue-500"><img src="images/glowy.png" alt="glowy" className="w-6 h-6 inline-block" /> {formatNumber(current.total.glowy)}</span>
+          <span className="flex items-center gap-1 text-purple-500"><img src="images/starry.png" alt="starry" className="w-6 h-6 inline-block" /> {formatNumber(current.total.starry)}</span>
         </div>
         <div className="text-sm text-slate-500">Total {mode === "week" ? "per week" : "per month"}</div>
       </div>
@@ -181,9 +181,9 @@ function OreCalculator({ settings, isDark, onWeeklyOreChange }: OreCalculatorPro
               <div>
                 <div className="font-semibold text-base mb-1">{src.label}</div>
                 <div className="flex gap-2 text-sm">
-                  {source.shiny > 0 && <span className="flex items-center gap-1 text-amber-500"><img src="/images/shiny.png" alt="shiny" className="w-5 h-5 inline-block" /> {formatNumber(source.shiny)}</span>}
-                  {source.glowy > 0 && <span className="flex items-center gap-1 text-blue-500"><img src="/images/glowy.png" alt="glowy" className="w-5 h-5 inline-block" /> {formatNumber(source.glowy)}</span>}
-                  {source.starry > 0 && <span className="flex items-center gap-1 text-purple-500"><img src="/images/starry.png" alt="starry" className="w-5 h-5 inline-block" /> {formatNumber(source.starry)}</span>}
+                  {source.shiny > 0 && <span className="flex items-center gap-1 text-amber-500"><img src="images/shiny.png" alt="shiny" className="w-5 h-5 inline-block" /> {formatNumber(source.shiny)}</span>}
+                  {source.glowy > 0 && <span className="flex items-center gap-1 text-blue-500"><img src="images/glowy.png" alt="glowy" className="w-5 h-5 inline-block" /> {formatNumber(source.glowy)}</span>}
+                  {source.starry > 0 && <span className="flex items-center gap-1 text-purple-500"><img src="images/starry.png" alt="starry" className="w-5 h-5 inline-block" /> {formatNumber(source.starry)}</span>}
                 </div>
               </div>
             </div>
@@ -200,7 +200,7 @@ function OreCalculator({ settings, isDark, onWeeklyOreChange }: OreCalculatorPro
           {/* Shiny Ore */}
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 min-w-[80px]">
-              <img src="/images/shiny.png" alt="shiny" className="w-5 h-5" />
+              <img src="images/shiny.png" alt="shiny" className="w-5 h-5" />
               <span className="text-sm font-medium text-slate-700">Shiny</span>
             </div>
             <div className="flex-1 bg-slate-100 rounded-full overflow-hidden h-4 border border-slate-200 relative">
@@ -229,7 +229,7 @@ function OreCalculator({ settings, isDark, onWeeklyOreChange }: OreCalculatorPro
           {/* Glowy Ore */}
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 min-w-[80px]">
-              <img src="/images/glowy.png" alt="glowy" className="w-5 h-5" />
+              <img src="images/glowy.png" alt="glowy" className="w-5 h-5" />
               <span className="text-sm font-medium text-slate-700">Glowy</span>
             </div>
             <div className="flex-1 bg-slate-100 rounded-full overflow-hidden h-4 border border-slate-200 relative">
@@ -258,7 +258,7 @@ function OreCalculator({ settings, isDark, onWeeklyOreChange }: OreCalculatorPro
           {/* Starry Ore */}
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 min-w-[80px]">
-              <img src="/images/starry.png" alt="starry" className="w-5 h-5" />
+              <img src="images/starry.png" alt="starry" className="w-5 h-5" />
               <span className="text-sm font-medium text-slate-700">Starry</span>
             </div>
             <div className="flex-1 bg-slate-100 rounded-full overflow-hidden h-4 border border-slate-200 relative">

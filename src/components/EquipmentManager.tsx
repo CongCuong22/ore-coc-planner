@@ -159,94 +159,28 @@ function EquipmentManager({ equipment, onEquipmentChange, isDark, weeklyOre }: E
                 const isCollapsed = collapsedHeroes.includes(hero);
                 // Calc for selected equipment
                 const heroEquip = grouped[hero].filter(eq => !eq.isHidden);
-                // Separate Epic and Common
-                const epicEquip = heroEquip.filter(eq => eq.rarity === 'Epic');
-                const commonEquip = heroEquip.filter(eq => eq.rarity === 'Common');
-                // Calculate total ore for each
-                let epicCost = { shiny: 0, glowy: 0, starry: 0 };
-                let commonCost = { shiny: 0, glowy: 0, starry: 0 };
-                epicEquip.forEach(eq => {
+                // Sum all ore costs for this hero
+                let totalCost = { shiny: 0, glowy: 0, starry: 0 };
+                heroEquip.forEach(eq => {
                   const cost = calculateOreCost(eq);
-                  epicCost.shiny += cost.shiny;
-                  epicCost.glowy += cost.glowy;
-                  epicCost.starry += cost.starry;
+                  totalCost.shiny += cost.shiny;
+                  totalCost.glowy += cost.glowy;
+                  totalCost.starry += cost.starry;
                 });
-                commonEquip.forEach(eq => {
-                  const cost = calculateOreCost(eq);
-                  commonCost.shiny += cost.shiny;
-                  commonCost.glowy += cost.glowy;
-                  commonCost.starry += cost.starry;
-                });
-                // Estimate time for Epic first (starry is bottleneck)
-                let epicWeeks = 0;
-                let epicPossible = true;
-                if (epicEquip.length > 0) {
-                  if (weeklyOre.starry > 0) {
-                    const shinyWeeks = weeklyOre.shiny > 0 ? epicCost.shiny / weeklyOre.shiny : 0;
-                    const glowyWeeks = weeklyOre.glowy > 0 ? epicCost.glowy / weeklyOre.glowy : 0;
-                    const starryWeeks = epicCost.starry / weeklyOre.starry;
-                    epicWeeks = Math.max(shinyWeeks, glowyWeeks, starryWeeks);
-                  } else {
-                    epicPossible = false;
-                  }
-                }
-                // After Epic, calculate remaining weekly ore for Common
-                let commonWeeks = 0;
-                if (commonEquip.length > 0) {
-                  let remainShiny = weeklyOre.shiny;
-                  let remainGlowy = weeklyOre.glowy;
-                  let remainStarry = weeklyOre.starry;
-                  if (epicEquip.length > 0 && epicPossible) {
-                    // Subtract epic ore usage per week (proportionally)
-                    // Calculate per-week usage for each ore type
-                    const epicTotalWeeks = epicWeeks > 0 ? epicWeeks : 1;
-                    const usedShinyPerWeek = epicCost.shiny / epicTotalWeeks;
-                    const usedGlowyPerWeek = epicCost.glowy / epicTotalWeeks;
-                    const usedStarryPerWeek = epicCost.starry / epicTotalWeeks;
-                    remainShiny = Math.max(weeklyOre.shiny - usedShinyPerWeek, 0);
-                    remainGlowy = Math.max(weeklyOre.glowy - usedGlowyPerWeek, 0);
-                    remainStarry = Math.max(weeklyOre.starry - usedStarryPerWeek, 0);
-                  }
-                  // If no ore left, cannot upgrade Common
-                  if (remainShiny === 0 && remainGlowy === 0 && remainStarry === 0) {
-                    commonWeeks = 0;
-                  } else {
-                    const shinyWeeks = remainShiny > 0 ? commonCost.shiny / remainShiny : 0;
-                    const glowyWeeks = remainGlowy > 0 ? commonCost.glowy / remainGlowy : 0;
-                    // Starry is usually 0 for Common, but keep for completeness
-                    const starryWeeks = remainStarry > 0 ? commonCost.starry / remainStarry : 0;
-                    commonWeeks = Math.max(shinyWeeks, glowyWeeks, starryWeeks);
-                  }
-                }
-                // Total estimate
+                // Calculate weeks needed for each ore type
+                const shinyWeeks = weeklyOre.shiny > 0 ? Math.ceil(totalCost.shiny / weeklyOre.shiny) : 0;
+                const glowyWeeks = weeklyOre.glowy > 0 ? Math.ceil(totalCost.glowy / weeklyOre.glowy) : 0;
+                const starryWeeks = weeklyOre.starry > 0 ? Math.ceil(totalCost.starry / weeklyOre.starry) : 0;
+                // Bottleneck
+                const maxWeeks = Math.max(shinyWeeks, glowyWeeks, starryWeeks);
                 let heroEstimate = '-';
-                if (epicEquip.length > 0) {
-                  if (!epicPossible) {
-                    heroEstimate = '-';
-                  } else {
-                    const totalWeeks = epicWeeks + commonWeeks;
-                    if (totalWeeks > 0) {
-                      heroEstimate = `≈${Math.ceil(totalWeeks)} weeks`;
-                    } else {
-                      heroEstimate = '-';
-                    }
-                  }
-                } else if (commonEquip.length > 0) {
-                  // Only Common
-                  const shinyWeeks = weeklyOre.shiny > 0 ? commonCost.shiny / weeklyOre.shiny : 0;
-                  const glowyWeeks = weeklyOre.glowy > 0 ? commonCost.glowy / weeklyOre.glowy : 0;
-                  const starryWeeks = weeklyOre.starry > 0 ? commonCost.starry / weeklyOre.starry : 0;
-                  const maxWeeks = Math.max(shinyWeeks, glowyWeeks, starryWeeks);
-                  if (maxWeeks > 0) {
-                    heroEstimate = `≈${Math.ceil(maxWeeks)}w`;
-                  } else {
-                    heroEstimate = '-';
-                  }
+                if (maxWeeks > 0) {
+                  heroEstimate = `≈${maxWeeks} weeks`;
                 }
                 // Calculate total ore for display
-                let totalShiny = epicCost.shiny + commonCost.shiny;
-                let totalGlowy = epicCost.glowy + commonCost.glowy;
-                let totalStarry = epicCost.starry + commonCost.starry;
+                let totalShiny = totalCost.shiny;
+                let totalGlowy = totalCost.glowy;
+                let totalStarry = totalCost.starry;
                 rows.push(
                   <tr key={hero + '-group'}>
                     <td colSpan={5} className="bg-amber-100 dark:bg-slate-700 text-lg font-bold text-slate-700 dark:text-slate-100 py-2 px-4 border-b border-amber-200 dark:border-slate-600 cursor-pointer select-none" onClick={() => {
